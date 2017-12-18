@@ -1,0 +1,13 @@
+footer{
+  width: 100%;
+  height: 200px;
+}
+button.navigation {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+
+}
+button.navigation[type = "next"] {
+  right: 60px;
+}
