@@ -7,15 +7,16 @@ footer{
   width: 800px;
   height: 200px;
 }
-button.navigation {
-    position: absolute;
-    width: 60px;
-    height: 20px;
+button.navigation, input[type="submit"] {
+    display: block;
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+}
+button.navigation[type="next"]{
+  float: right;
+}
 
-}
-button.navigation[type = "next"] {
-  right: 60px;
-}
 p, h1, td{
   font-family: helvetica;
 }

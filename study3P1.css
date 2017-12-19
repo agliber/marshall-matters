@@ -36,7 +36,17 @@ th.candidate{
 .info{
   display:none;
 }
-
+label{
+  font-size: 30px;
+  line-height: 30px;
+}
+input[type="radio"]{
+  display: inline-block;
+  vertical-align: center;
+  border: 0;
+  height: 20px;
+  width: 20px;
+}
 
 p{
   margin: 2px;
@@ -49,4 +59,9 @@ p{
   td,th{
     font-size: 10px;
   }
+}
+
+#radioButtonContainer{
+  width: 1000px;
+  margin: 0 auto;
 }
