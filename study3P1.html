@@ -21,21 +21,100 @@
         </p>
     </header>
     <main>
-      <div id="table">
-        <div class="row">
-          <div class="infoBox"></div>
-          <div class="infoBox"></div>
-          <div class="infoBox"></div>
-          <div class="infoBox"></div>
-          <div class="infoBox"></div>
-        </div>
 
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-      <div>
+      <table id="infoTable">
+        <tr id="tableTopRow">
+          <th class="candidate" rowspan="5">
+            <div class="candidateInfoBox" id="candidate1">
+              <div><p>Candidate1</p></div>
+              <p class="info">3.1</p>
+              <p class="info">11/15</p>
+              <p class="info">12/15</p>
+              <p class="info">9/15</p>
+              <p class="info">Female</p>
+              <p class="info">White</p>
+              <p class="info">Miami of Ohio</p>
+              <p class="info">Business Administration</p>
+              <p class="info">Middle Class</p>
+              <p class="info">1 year</p>
+              <p class="info">Yes</p>
+              <p class="info">Dancing</p>
+              <p class="info">Single</p>
+              <p class="info">High</p>
+              <p class="info">Green</p>
+              <p class="info">Princess Bride</p>
+              <p class="info">Shaker Heights, Ohio</p>
+              <p class="info">C++</p>
+              <p class="info">None</p>
+            </div>
+          </th>
+          <th id = "tableTitle" colspan="5">
+            <p>Place your mouse above a button to see information on that dimension about the candidate.</p>
+          </th>
+          <th class="candidate" rowspan="5">
+            <div class="candidateInfoBox" id="candidate2">
+              <div><p>Candidate2</p></div>
+              <p class="info">3.4</p>
+              <p class="info">8/15</p>
+              <p class="info">14/15</p>
+              <p class="info">11/15</p>
+              <p class="info">Female</p>
+              <p class="info">White</p>
+              <p class="info">Illinois St.</p>
+              <p class="info">Communications</p>
+              <p class="info">Upper-Middle Class</p>
+              <p class="info">3 years</p>
+              <p class="info">No</p>
+              <p class="info">Running</p>
+              <p class="info">Single</p>
+              <p class="info">Medium</p>
+              <p class="info">Red</p>
+              <p class="info">Shawshank Redemption</p>
+              <p class="info">Springfield, Illinois</p>
+              <p class="info">Fortran</p>
+              <p class="info">Spanish</p>
+            </div>
+          </th>
+        </tr>
+
+          <tr> <!--  need to  randomize position of cells -->
+            <td> College GPA</td>
+            <td> Extraversion score</td>
+            <td> Agreeableness score</td>
+            <td> Conscientiousness score</td>
+            <td> Gender</td>
+          </tr>
+          <tr>
+            <td> Race</td>
+            <td> Name of College Attended</td>
+            <td> Major</td>
+            <td> Socioeconomic Status Background</td>
+            <td> Prior Experience in The Field</td>
+          </tr>
+          <tr>
+            <td> Per Owner (yes/no)</td>
+            <td> Hobbies</td>
+            <td> Marital Status</td>
+            <td> Measure of Achievement Motivation</td>
+            <td> Favorite Color</td>
+          </tr>
+          <tr>
+            <td> Favorite Movie</td>
+            <td> Hometown</td>
+            <td> Programming Language </td>
+            <td> Foreign Language</td>
+            <td> </td>
+          </tr>
+      
+      </table>
+
+
     </main>
     <footer>
+      <input type="submit" value="Submit" ></input><br>
+       <button class="navigation" name="next" type = "next"> Next </button>
     </footer>
+
+    <script src="study3P1.js"></script>
   </body>
 </html>
