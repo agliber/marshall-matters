@@ -1,55 +1,22 @@
-#formTable{
-  width: 800px;
-  height: 1140px;
+table{
+  width: 90%;
   border: black 2px solid;
   margin: 20px auto;
   padding: 0;
+  border-collapse: collapse;
 }
 
-
-#topRow{
-  background-color: white;
-  position: sticky;
-  top: 0;
-}
-.question{
-  border: none;
-  width: 388px;
-  height: 58px;
-  float: left;
-}
-.row{
-  margin: 0;
+td,th{
   border: solid black 1px;
-  height: 58px;
-  width: 100%;
 }
-.answerBox{
-  border: none;
-  height: 58px;
-  width: 410px;
-  float: left;
-}
-.answerOption{
-  border: none;
-  float: left;
-  width: 80px;
-  height: 58px;
-  text-align: center;
 
-}
+
 p {
   margin: 2px;
 }
 
 input[type="radio"]{
-  border: 0;
   width: 25px;
   height:  25px;
   margin: 18px 28px;
-}
-
-input[type=submit]{
-  position: absolute;
-  left: 50%;
 }

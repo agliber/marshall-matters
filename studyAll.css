@@ -1,3 +1,16 @@
+html{
+  background-color: #4286f4;
+}
+body{
+  border-radius: 40px;
+  border: solid black;
+  width: 900px;
+  margin: 10px auto;
+  background-color: white;
+  box-shadow: 0px 10px 80px;
+
+}
+
 header{
   margin: 20px auto;
   width: 800px;
@@ -5,18 +18,32 @@ header{
 footer{
   margin: 20px auto;
   width: 800px;
-  height: 200px;
+  height: 100px;
 }
 button.navigation, input[type="submit"] {
     display: block;
     width: 120px;
     height: 40px;
     margin: 0 auto;
+    cursor: pointer;
+}
+input,label{
+  cursor: pointer;
 }
 button.navigation[type="next"]{
   float: right;
+  cursor: pointer;
 }
 
 p, h1, td{
   font-family: helvetica;
+}
+
+@media only screen and (max-width: 992px){
+  body{
+    width: 700px;
+  }
+  header, footer{
+    width: 600px;
+  }
 }
