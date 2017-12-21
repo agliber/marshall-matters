@@ -1,24 +1,38 @@
 
 label {
-  margin: 0 40px;
   font-family: helvetica;
-  display: block;
-  padding-left: 15px;
-  text-indent: -15px;
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 10px;
+  transition: box-shadow ease-in-out 0.1s;
 }
 
 input[type=checkbox]{
   /display: inline-block;
-  opacity: 0.5;
-  /background-image: url(black-x-md.png);
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+
 }
 
 .newCheck{
-  margin: 0 15px;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 100%;
+  padding: 0;
+  border-radius: 4px;
+  margin: 0px 15px;
   vertical-align: center;
-  display: inline-block;
-  height: 10px;
-  width: 10px;
+  text-align: center;
+  flex-shrink: 0;
+  height: 15px;
+  width: 15px;
   border: black solid 1px;
-  background-color: blue;
+  /background-color: white;
+}
+label:hover{
+  box-shadow: 0 0 10px;
+  /background-color: #ffc72c;
 }

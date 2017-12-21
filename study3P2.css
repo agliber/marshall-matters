@@ -1,8 +1,5 @@
-main{
-  width: 800px;
-  margin: 0 auto;
-}
 textarea {
+  display: none;
   overflow:hidden;
   height: 100px;
   width: 100%;

@@ -1,15 +1,21 @@
 html{
-  background-color: #4286f4;
+  background-color: #9d2235;
 }
 body{
   border-radius: 40px;
-  border: solid black;
+  border: solid #ffc72c 4px;
   width: 900px;
   margin: 10px auto;
   background-color: white;
   box-shadow: 0px 10px 80px;
 
 }
+
+main{
+  width: 800px;
+  margin: 0 auto;
+}
+
 
 header{
   margin: 20px auto;
@@ -43,7 +49,7 @@ p, h1, td{
   body{
     width: 700px;
   }
-  header, footer{
+  header, footer, main{
     width: 600px;
   }
 }

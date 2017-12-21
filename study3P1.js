@@ -1,6 +1,6 @@
 
 
-
+// -----------------------Form enable/disable-----------------------------------------------------
 document.querySelector("button.navigation[type=next]").disabled = true;// next begins as disabled
 document.querySelector("input[type=submit]").disabled = true; // submit button is disabled until radio button is selected
 var submittedBool = false;
@@ -16,50 +16,47 @@ form.addEventListener("click",function(e){
 
 
 document.querySelector("input[type=submit]").addEventListener("click",function(e){//submiting enables next button
-
   form.querySelectorAll("*").forEach(function(element){
     element.disabled = true;
   });
   document.querySelector("button.navigation[type=next]").disabled = false;
 });
 
-
+//------------------------------Randomize form info-----------------------------------------------
 
 var candidate1InfoBox = document.querySelector("#candidate1").querySelectorAll(".info");
 var candidate2InfoBox = document.querySelector("#candidate2").querySelectorAll(".info");
 var infoLabels = document.querySelectorAll("td");
 
-
-
-for(let i = 0; i < 19 ; i++){
+infoLabels.forEach(function(label,i){
   candidate1InfoBox[i].setAttribute("data-info-num",i);
   candidate2InfoBox[i].setAttribute("data-info-num",i);
-  infoLabels[i].setAttribute("data-info-num",i);
-    infoLabels[i].id = i;
-}
+  label.setAttribute("data-info-num",i);
+    label.id = i;
+});
 
-
-console.log(infoLabels);
 var infoLabelsShuffled = shuffle(Array.from(infoLabels));
-console.log(infoLabels);
-console.log(infoLabelsShuffled);
 
 infoLabels.forEach(function(label,i){
   label.outerHTML = infoLabelsShuffled[i].outerHTML;
-
-
 });
 
-var table = document.querySelector("#infoTable");
-var interval,time = 0;
+//----------------------------info hover timer------------------------------------------------
 
-table.addEventListener("mouseover", function(e){//displays the information for each candidate upon hovering over a table data cell
+var table = document.querySelector("#infoTable");
+var interval, timeout, time = 0;
+
+table.addEventListener("mouseover", function(e){
+    timeout = setTimeout(function(){startTimer(e);},400);
+});
+
+function startTimer(e){//displays the information for each candidate upon hovering over a table data cell
     if(e.target.innerHTML.trim() === ""){//check for empty cell
       return;
     }
 
     if(e.target.tagName == "TD"){
-
+      console.log(e.target.innerHTML);
       var infoNum = e.target.getAttribute("data-info-num");
       time = 0;
       interval = setInterval(timer,100);
@@ -68,14 +65,14 @@ table.addEventListener("mouseover", function(e){//displays the information for e
 
     }
 
-});
+};
 
 table.addEventListener("mouseout", function(e){//hides the information for each candidate upon leaving a table data cell
   if(e.target.innerHTML.trim() === ""){//check for empty cell
     return;
   }
     if(e.target.tagName == "TD"){
-
+      clearTimeout(timeout);
       var infoNum = e.target.getAttribute("data-info-num");
       clearInterval(interval);
       document.querySelector("#candidate1").querySelector(`[data-info-num = "${infoNum}"]`).setAttribute("style","display:none");
@@ -90,11 +87,11 @@ document.querySelector("button.navigation[type=next]").addEventListener("click",
 
 function timer(){
 
-  //  time += 0.1;
-  //  console.log(time);
+    time += 0.1;
+    console.log(time);
 
 }
-
+//-----------------array shuffle function-------------------------------------------------------------
 
 function shuffle(array) {
     var index = array.length , temp, random;

@@ -21,13 +21,14 @@ td{
   border-radius: 10px;
   box-shadow: none;
   -webkit-transition:  background-color 0.5s;
-  transition:  background-color 0.5s;
+  transition:  box-shadow 0.5s;
   transition-timing-function: ease-in-out;
 
 }
 
 td:hover{
-    background-color: #9cbef4;
+    /background-color: #ffc72c;
+    box-shadow: 0 0 20px;
 
 }
 th.candidate{
