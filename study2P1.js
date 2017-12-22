@@ -1,21 +1,18 @@
-var answerBoxes = document.querySelectorAll("tr");
+var questions = document.querySelectorAll(".question");
 var answerOptions = [ "Not_At_All", "Rarely", "Some-times", "Often", "Very_Often"];
 
-answerBoxes.forEach(function(answerBox,index){
-  console.log(answerBox,index);
-  if(index == 0){
-    return;
-  }
+questions.forEach(function(question,index){
 
   for(var i = 0; i < 5; i++){
-    var newCell = document.createElement("td");
+    var newCell = document.createElement("div");
     var newRadio = document.createElement("input");
     newCell.append(newRadio);
 
     newRadio.setAttribute("type","radio");
     newRadio.setAttribute("name",`Q${index+1}`);
     newRadio.setAttribute("value",answerOptions[i]);
-    answerBox.append(newCell);
+    //question.append(newCell);
+    $(newCell).insertAfter(question);
   }
 });
 
