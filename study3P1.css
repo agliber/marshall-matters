@@ -1,48 +1,46 @@
 #infoTable{
-  margin: 0 auto;
-  width: 800px;
-  height: 400px;
-  table-layout: fixed;
-  empty-cells: hide;
+  display: grid;
+  grid-template-columns: 100px auto auto auto auto 100px;
+  grid-template-rows: auto 80px 80px 80px 80px 80px;
+
+  grid-gap: 5px;
+  width: 100%;
+
 }
-#tableTopRow {
-  height: 40px;
-}
-td,th {
-  font-size: 12px;
-  padding: 2px;
-  border-collapse: separate;
-  vertical-align: center;
+#tableTitle{
   text-align: center;
-
+  grid-column: 1/7;
 }
-td{
-  border: solid 1px;
-  border-radius: 10px;
-  box-shadow: none;
-  -webkit-transition:  background-color 0.5s;
-  transition:  box-shadow 0.5s;
-  transition-timing-function: ease-in-out;
-
-}
-
-td:hover{
-    /background-color: #ffc72c;
-    box-shadow: 0 0 20px;
-
-}
-th.candidate{
-  vertical-align: top;
-
-}
-.candidateInfoBox {
+.candidate{
   position: sticky;
-  top:0px;
-  width: 96%;
-  height: 60px;
-  padding: 2px;
-  vertical-align: center;
+  top: 0;
+  padding: 5px;
+  text-align: center;
 }
+.candidateTitle{
+  position: sticky;
+  top: 0;
+}
+#candidate1{
+  grid-area: 2/1  /  7/2;
+}
+#candidate2{
+  grid-area: 2/6  /  7/7;
+}
+.infoLabel{
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: box-shadow ease-in-out 0.5s;
+  /width: 200px;
+}
+.infoLabel:hover{
+  box-shadow: 0 0 20px;
+}
+
+
+
+
 .info{
   display:none;
 }
@@ -68,12 +66,8 @@ p{
 }
 
 @media only screen and (max-width: 992px){
-  #infoTable{
-    width: 600px;
-  }
-  td,th{
-    font-size: 8px;
-  }
+
+
   #radioButtonContainer{
     width: 600px;
     margin: 0 auto;

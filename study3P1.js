@@ -26,7 +26,7 @@ document.querySelector("input[type=submit]").addEventListener("click",function(e
 
 var candidate1InfoBox = document.querySelector("#candidate1").querySelectorAll(".info");
 var candidate2InfoBox = document.querySelector("#candidate2").querySelectorAll(".info");
-var infoLabels = document.querySelectorAll("td");
+var infoLabels = document.querySelectorAll(".infoLabel");
 
 infoLabels.forEach(function(label,i){
   candidate1InfoBox[i].setAttribute("data-info-num",i);
@@ -55,7 +55,7 @@ function startTimer(e){//displays the information for each candidate upon hoveri
       return;
     }
 
-    if(e.target.tagName == "TD"){
+    if(e.target.className == "infoLabel"){
       console.log(e.target.innerHTML);
       var infoNum = e.target.getAttribute("data-info-num");
       time = 0;
@@ -71,7 +71,7 @@ table.addEventListener("mouseout", function(e){//hides the information for each 
   if(e.target.innerHTML.trim() === ""){//check for empty cell
     return;
   }
-    if(e.target.tagName == "TD"){
+    if(e.target.className == "infoLabel"){
       clearTimeout(timeout);
       var infoNum = e.target.getAttribute("data-info-num");
       clearInterval(interval);

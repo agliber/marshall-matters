@@ -41,7 +41,7 @@ button.navigation[type="next"]{
   cursor: pointer;
 }
 
-p, h1, td{
+p, h1, td, div{
   font-family: helvetica;
 }
 
