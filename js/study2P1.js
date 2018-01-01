@@ -11,13 +11,23 @@ questions.forEach(function(question,index){
     newRadio.setAttribute("type","radio");
     newRadio.setAttribute("name",`Q${index+1}`);
     newRadio.setAttribute("value",answerOptions[i]);
+    newRadio.setAttribute("required","");//make all radio buttons required
     //question.append(newCell);
     $(newCell).insertAfter(question);
   }
 });
 
-var nextButton =  document.querySelector("button.navigation[type = \"next\"]");
+//-----------check all the radio buttons are checked before submitting----------
+/*
+document.querySelector("input[type=submit]").disabled = true;
+var form = document.querySelector("form");
 
-nextButton.addEventListener("click",function(e){
-  window.location = "study3P1.html";
+form.addEventListener("click", function(e){
+  var numChecked = form.querySelectorAll("input[type=radio]:checked").length;
+  console.log(numChecked);
+  if(numChecked == 18){
+    document.querySelector("input[type=submit]").disabled = false;
+    console.log("enable submit");
+  }
 });
+*/

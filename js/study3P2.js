@@ -1,7 +1,3 @@
-document.querySelector("button.navigation[type=next]").addEventListener("click",function(){
-  window.location = "study3P3.html";
-});
-
 var form = document.querySelector("form");
 var radioButtons = form.querySelectorAll("input[type=radio][value=yes]");
 

@@ -28,7 +28,7 @@ footer{
 }
 button.navigation, input[type="submit"] {
     display: block;
-    width: 120px;
+    width: 140px;
     height: 40px;
     margin: 0 auto;
     cursor: pointer;

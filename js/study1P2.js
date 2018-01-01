@@ -1,11 +1,4 @@
 
-//----------------------------Next Button link---------------------------------------
-document.querySelector("button.navigation[type=\"next\"]").addEventListener("click", function(){
-    window.location = "study2P1.html";
-});
-
-
-
 var form =  document.querySelector("form");
 var checkBoxItem = form.querySelectorAll("label");
 var checkBoxes = document.querySelectorAll("input[type=checkbox]");
@@ -15,36 +8,28 @@ checkBoxItem.forEach(function(checkBox,index){
   checkBox.id = index;
 });
 
-
+//-------------------make sudo X box trigger real checkbox---------------
 form.addEventListener("click", function(e){
   var inputCheckBoxes = form.querySelectorAll("input[type=checkbox]");
   inputCheckBoxes.forEach(function(box){
       if(box.checked == true){
           box.parentElement.querySelector(".newCheck").innerHTML = "X";
         //box.parentElement.querySelector(".newCheck").setAttribute("style","background-color: blue;");
-
       }else{
         box.parentElement.querySelector(".newCheck").innerHTML = "";
-
       }
   });
 
 });
-
-
-
-
+//--------------------randomize order of questions-----------------------------
 var checkBoxItemShuffled = shuffle( Array.from(checkBoxItem) );
-
-
-
 checkBoxItem.forEach(function(checkBox,i){
     checkBox.outerHTML  = checkBoxItemShuffled[i].outerHTML;
 });
 
 
 
-//------------------Array randomizer function----------------------------------------
+//------------------Array randomizer function----------------------------------
 
 function shuffle(array) {
   var index = array.length , temp, random;

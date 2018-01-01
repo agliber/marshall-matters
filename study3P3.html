@@ -2,26 +2,26 @@
 <html>
   <head>
     <title> Study 3 </title>
-    <link rel="stylesheet" type="text/css" href="studyAll.css">
-    <link rel="stylesheet" type="text/css" href="study3P3.css">
+    <link rel="stylesheet" type="text/css" href="./css/studyAll.css">
+    <link rel="stylesheet" type="text/css" href="./css/study3P3.css">
   </head>
   <body>
     <header>
       <h1> Demographics </h1>
     </header>
     <main>
-      <form>
+      <form action="/api/study3P3" method="post">
         <p>What is your age?</p>
-        <input type="text"></input>
+        <input type="text" name="age" required></input>
 
         <p>What is your gender?</p>
         <label for="maleGender">Male</label>
-        <input type="radio" name="gender" id="maleGender" value="male"></input><br>
+        <input type="radio" name="gender" id="maleGender" value="male" required></input><br>
         <label for="femaleGender">Female</label>
         <input type="radio" name="gender" id="femaleGender" value="female"></input><br>
         <label for="otherGender">Other</label>
         <input type="radio" name="gender" id="otherGender" value="other"></input><br>
-        <input type="submit" name="submit"></input>
+        <input type="submit" value="Submit & Complete"></input>
       </form>
 
     </main>

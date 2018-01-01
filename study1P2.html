@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Study 1</title>
-    <link rel="stylesheet" type="text/css" href="studyAll.css">
-    <link rel="stylesheet" type="text/css" href="study1.css">
+    <link rel="stylesheet" type="text/css" href="../css/studyAll.css">
+    <link rel="stylesheet" type="text/css" href="../css/study1.css">
   </head>
   <body>
     <header>
@@ -25,7 +25,7 @@
     <main>
 
 
-      <form><!--these need to be randomized via javascript-->
+      <form method="post" action="/api/study1P2" ><!--these need to be randomized via javascript-->
         <!-- Possibly need to change the look to X's instead of checkmarks which requires css and js -->
          <label><div class = "newCheck"></div> college GPA <input type="checkbox" name="characteristic" value="gpa"></label>
          <label><div class = "newCheck"></div> general personality measure like the BIG 5 which measures openness, conscientiousness, extraversion, agreeableness, and neuroticism <input type="checkbox" name="characteristic" value="personality"></label>
@@ -44,14 +44,14 @@
          <label><div class = "newCheck"></div> hometown<input type="checkbox" name="characteristic" value="homeTown">   </label>
          <label><div class = "newCheck"></div> programming languages <input type="checkbox" name="characteristic" value="programmingLanguage">  </label>
          <label><div class = "newCheck"></div> foreign languages <input type="checkbox" name="characteristic" value="foreignLanguage">   </label>
-        <input type="submit" value="Submit" >
+         <label><div class = "newCheck"></div> graduate degree <input type="checkbox" name="characteristic" value="graduateDegree">   </label>
+        <input type="submit" value="Submit & Continue" ></input>
       </form>
 
     </main>
     <footer>
-      <button class="navigation" name="next" type = "next"> Next </button>
       <p>(2/6)</p>
     </footer>
-    <script src="study1P2.js"></script>
+    <script src="../js/study1P2.js"></script>
   </body>
 </html>

@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Study 3</title>
-    <link rel="stylesheet" type="text/css" href="studyAll.css">
-    <link rel="stylesheet" type="text/css" href="study3P1.css">
+    <link rel="stylesheet" type="text/css" href="./css/studyAll.css">
+    <link rel="stylesheet" type="text/css" href="./css/study3P1.css">
   </head>
   <body>
     <header>
@@ -110,24 +110,25 @@
 
       </div>
       <br>
-      <form>
+      <form method="post" action="/api/study3P1">
         <div id="radioButtonContainer">
           <label for="radioCandidate1">Candidate 1</label>
-          <input type="radio" name="candidateChoice" id="radioCandidate1" value="candidate1"></input>
-          <input type="radio" name="candidateChoice" id="radioCandidate2" value="candidate2" style="float:right;"></input>
+          <input type="radio" name="candidateChoice" id="radioCandidate1" value="candidate1" required></input>
+          <input type="radio" name="candidateChoice" id="radioCandidate2" value="candidate2" style="float:right;" required></input>
           <label for="radioCandidate2" style="float:right;"> Candidate 2</label>
 
         </div>
-        <input type="submit" value="Submit" ></input><br>
+        <input type="submit" value="Submit & Continue" ></input><br>
       </form>
 
 
     </main>
     <footer>
-       <button class="navigation" name="next" type = "next">  Next  </button>
        <p>(4/6)</p>
     </footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="./js/study3P1.js"></script>
 
-    <script src="study3P1.js"></script>
+
   </body>
 </html>
