@@ -18,5 +18,8 @@
     "bias"
   ],
   "author": "Adam Liber",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "client-sessions": "^0.8.0"
+  }
 }
