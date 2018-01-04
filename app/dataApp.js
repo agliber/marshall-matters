@@ -42,7 +42,6 @@ app.post('/api/:page',function(req,res){
     console.log(req.header);
     console.log(req.body);
     if(req.params.page == "study1P1"){
-
           con.query(`SELECT user_id FROM decision_making WHERE user_id = '${req.body.email}' ;`, function(err,result,fields){
               if(err){throw err;}
               console.log(JSON.stringify(result));
@@ -60,67 +59,77 @@ app.post('/api/:page',function(req,res){
 
           });
 
-    }else if(req.params.page == "study1P2"){
-          let user_id = req.surveySession.user_id;
-          console.log(req.surveySession.user_id);
-          if(user_id){
-            //update all characteristics to 0 (false)
-            if(Array.isArray(req.body.characteristic) ){
-              req.body.characteristic.forEach(function(characteristic){
-                  console.log(characteristic);
-                  con.query(`UPDATE decision_making SET study1_${characteristic} = 1 WHERE user_id = '${user_id}' ;`);
+    }else {
+        let user_id = req.surveySession.user_id;
+        console.log(user_id);
+        if(!user_id){
+          res.redirect('/');
+        }else{
+            if(req.params.page == "study1P2"){
 
-              });
-            }else{
-              con.query(`UPDATE decision_making SET study1_${req.body.characteristic} = 1 WHERE user_id = '${user_id}' ;`);
+
+                  if(user_id){
+                    //update all characteristics to 0 (false)
+                    if(Array.isArray(req.body.characteristic) ){
+                      req.body.characteristic.forEach(function(characteristic){
+                          console.log(characteristic);
+                          con.query(`UPDATE decision_making SET study1_${characteristic} = 1 WHERE user_id = '${user_id}' ;`);
+
+                      });
+                    }else{
+                      con.query(`UPDATE decision_making SET study1_${req.body.characteristic} = 1 WHERE user_id = '${user_id}' ;`);
+                    }
+                    res.redirect('/study2P1.html');
+                  }else{
+
+                  }
+
+
+
+            }else if(req.params.page == "study2P1"){
+                  let user_id = req.surveySession.user_id;
+                  if(user_id){
+                    let body = req.body;
+                    console.log(typeof body);
+                    console.log(Array.isArray(body));
+                    for (var key in body) {
+                        if (Object.prototype.hasOwnProperty.call(body,key)) {
+                            console.log(`UPDATE decision_making SET study2_${key} = ${body[key]} WHERE user_id = '${user_id}' ;`);
+                            con.query(`UPDATE decision_making SET study2_${key} = '${body[key]}' WHERE user_id = '${user_id}' ;`);
+                        }
+                    }
+
+                  }else{
+                    res.redirect('/');
+                  }
+                  res.redirect('/study3P1.html');
+            }else if(req.params.page == "study3P1"){
+              let user_id = req.surveySession.user_id;
+              if(user_id){
+
+              }
+              res.redirect('/study3P2.html');
+            }else if(req.params.page == "study3P2"){
+              let user_id = req.surveySession.user_id;
+              if(user_id){
+
+              }
+              res.redirect('/study3P3.html');
+            }else if(req.params.page == "study3P3"){
+              let user_id = req.surveySession.user_id;
+              if(user_id){
+
+              }
+              res.redirect('/thankYouPage.html');
+            }else if(req.params.page == "times"){
+              let user_id = req.surveySession.user_id;
+              if(user_id){
+
+              }
+              res.status(200);
             }
-            res.redirect('/study2P1.html');
-          }else{
-            res.redirect('/');
-          }
-
-
-
-    }else if(req.params.page == "study2P1"){
-          let user_id = req.surveySession.user_id;
-          if(user_id){
-            let body = req.body;
-            console.log(typeof body);
-            console.log(Array.isArray(body));
-            for (var key in body) {
-                if (Object.prototype.hasOwnProperty.call(body,key)) {
-                    console.log(`UPDATE decision_making SET study2_${key} = ${body[key]} WHERE user_id = '${user_id}' ;`);
-                    con.query(`UPDATE decision_making SET study2_${key} = '${body[key]}' WHERE user_id = '${user_id}' ;`);
-                }
-            }
-
-          }else{
-            res.redirect('/');
-          }
-          res.redirect('/study3P1.html');
-    }else if(req.params.page == "study3P1"){
-      let user_id = req.surveySession.user_id;
-      if(user_id){
-
+        }
       }
-      res.redirect('/study3P2.html');
-    }else if(req.params.page == "study3P2"){
-      let user_id = req.surveySession.user_id;
-      if(user_id){
 
-      }
-      res.redirect('/study3P3.html');
-    }else if(req.params.page == "study3P3"){
-      let user_id = req.surveySession.user_id;
-      if(user_id){
 
-      }
-      res.redirect('/thankYouPage.html');
-    }else if(req.params.page == "times"){
-      let user_id = req.surveySession.user_id;
-      if(user_id){
-
-      }
-      res.status(200);
-    }
 });

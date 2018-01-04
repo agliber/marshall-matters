@@ -1,3 +1,4 @@
 #specific files to ignore
 *.pdf
 *.pptx
+app/node_modules/*

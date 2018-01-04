@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+  form{
+    width: 100%;
+    margin: 0 auto;
+  }
+</style>
 <html>
   <head>
     <title>Welcome</title>
@@ -9,14 +15,13 @@
       <h1>Welcome!</h1>
       <p> In this session you will complete three studies assessing your management style. </p>
     </header>
-    <main style="width:800px;margin: 0 auto;">
-      <form action="/api/study1P1" method="post">
+    <main >
+      <form action="/api/login" method="post" >
         <input type="email" name="email" placeholder="Email" required></input>
         <input type="submit" value="Begin" />
       </form>
     </main>
     <footer>
     </footer>
-    <script src="../js/index.js"></script>
   </body>
 </html>

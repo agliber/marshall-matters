@@ -20,6 +20,8 @@
   "author": "Adam Liber",
   "license": "MIT",
   "dependencies": {
-    "client-sessions": "^0.8.0"
+    "client-sessions": "^0.8.0",
+    "cookie-parser": "^1.4.3",
+    "js-cookie": "^2.2.0"
   }
 }

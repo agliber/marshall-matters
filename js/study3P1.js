@@ -1,22 +1,41 @@
 
 /*jshint esversion: 6 */
-// -----------------------Form enable/disable-----------------------------------------------------
-/*
-document.querySelector("input[type=submit]").disabled = true; // submit button is disabled until radio button is selected
-var submittedBool = false;
-var form = document.querySelector("form");
-form.addEventListener("click",function(e){
-  if(e.target.tagName == "INPUT" && e.target.getAttribute("type") == "radio"){
-    if(e.target.checked && !submittedBool){
-      submittedBool = true;
-      document.querySelector("input[type=submit]").disabled = false; //enable the submit button
-    }
+//jquery included
+//js-cookie included
+
+// set time cookies to zero if not already set
+var timeData = {};
+(function(){
+
+  if(!Cookies.get('times') ){
+    timeData = {
+       "College GPA" : 0 ,
+       "Extraversion score" : 0,
+       "Agreeableness score" : 0 ,
+       "Conscientiousness score" : 0 ,
+       "Gender" : 0 ,
+       "Race" : 0 ,
+       "Name of College Attended" : 0  ,
+       "Major" : 0,
+       "Socioeconomic Status Background" : 0,
+       "Prior Experience in The Field" : 0,
+       "Pet Owner (yes/no)" : 0,
+       "Hobbies" : 0,
+       "Marital Status" : 0,
+       "Measure of Achievement Motivation" : 0,
+       "Favorite Color" : 0,
+       "Favorite Movie" : 0,
+       "Hometown" : 0,
+       "Programming Language" : 0,
+       "Foreign Language" : 0,
+       "Graduate Degree" : 0,
+    };
+  }else{
+    timeData = JSON.parse(Cookies.get('times') );
   }
-});
-*/
-
-
-
+  console.log(timeData);
+  console.log(typeof timeData);
+}());
 //------------------------------Randomize form info-----------------------------------------------
 
 var candidate1InfoBox = document.querySelector("#candidate1").querySelectorAll(".info");
@@ -45,7 +64,7 @@ table.addEventListener("mouseover", function(e){//delays the timer
     timeout = setTimeout(function(){startTimer(e);},400);
 });
 
-var timeTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; // stores the cummalitive hover times, for each characteristic
+ // stores the cummalitive hover times, for each characteristic
 function startTimer(e){//displays the information for each candidate upon hovering over a table data cell
     if(e.target.innerHTML.trim() === ""){//check for empty cell
       return;
@@ -53,9 +72,9 @@ function startTimer(e){//displays the information for each candidate upon hoveri
 
     if(e.target.className == "infoLabel"){
       console.log(e.target.innerHTML);
+      var label = e.target.innerHTML.trim();
       var infoNum = e.target.getAttribute("data-info-num");
-
-      interval = setInterval(function(){timer(infoNum);}, 100);
+      interval = setInterval(function(){timer(label);}, 100);
 
       document.querySelector("#candidate1").querySelector(`[data-info-num = "${infoNum}"]`).setAttribute("style","display:inline");
       document.querySelector("#candidate2").querySelector(`[data-info-num = "${infoNum}"]`).setAttribute("style","display:inline");
@@ -79,47 +98,32 @@ table.addEventListener("mouseout", function(e){//hides the information for each 
 });
 
 
-function timer(infoNum){
-    timeTotals[infoNum] += 0.1;
-    console.log(timeTotals[infoNum]);
+function timer(label){
+
+    timeData[label] += 0.1 ;
+    timeData[label] = round(timeData[label],2);
+    console.log(timeData[label]);
+    Cookies.set('times',timeData);
 
 }
-
+/*
 var postInterval = setInterval(postTimes, 10000);
 
 function postTimes(){
-  var timeData = {
-     "College GPA" : timeTotals[0] ,
-     "Extraversion score" : timeTotals[1] ,
-     "Agreeableness score" : timeTotals[2] ,
-     "Conscientiousness score" : timeTotals[3] ,
-     "Gender" : timeTotals[4] ,
-     "Race" : timeTotals[5] ,
-     "Name of College Attended" : timeTotals[6]  ,
-     "Major" : timeTotals[7],
-     "Socioeconomic Status Background" : timeTotals[8],
-     "Prior Experience in The Field" : timeTotals[9],
-     "Pet Owner (yes/no)" : timeTotals[10],
-     "Hobbies" : timeTotals[11],
-     "Marital Status" : timeTotals[12],
-     "Measure of Achievement Motivation" : timeTotals[13],
-     "Favorite Color" : timeTotals[14],
-     "Favorite Movie" : timeTotals[15],
-     "Hometown" : timeTotals[16],
-     "Programming Language " : timeTotals[17],
-     "Foreign Language" : timeTotals[18],
-     "Graduate Degree" : timeTotals[19],
-  };
-  $.post("/api/times",timeData);
+
+  //Cookies.set('times', timeData);
+  console.log(Cookies.get('times') );
+  //$.post("/api/study3/p1_times",timeData,function(data){
+    //alert(data);
+    //$('body').load(data);
+  //});
 }
-var radioButtons = document.querySelector("form").querySelectorAll("input[type=radio]:checked");
-document.querySelector("input[type=submit]").addEventListener("click",function(e){//submiting enables next button
-    var radioButtons = document.querySelector("form").querySelectorAll("input[type=radio]:checked");
-    console.log(radioButtons.length);
-    if(radioButtons.length == 1){
-      clearInterval(postTimes);
-    }
+*/
+
+document.querySelector("form").addEventListener("submit",function(e){//submiting enables next button
+    //Cookies.remove('times');
 });
+
 //-----------------array shuffle function-------------------------------------------------------------
 
 function shuffle(array) {
@@ -135,4 +139,11 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+
+//-------------rounding function---------------------------------------------
+
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
