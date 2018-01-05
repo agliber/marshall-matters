@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(sessions({
   cookieName : "surveySession",
   secret : "***REMOVED***",
-  duration: 5 * 60 * 1000,
-  activeDuration: 1 * 60 * 1000
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
 }));
 
 app.use( express.static("../") );

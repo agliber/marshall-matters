@@ -106,23 +106,10 @@ function timer(label){
     Cookies.set('times',timeData);
 
 }
-/*
-var postInterval = setInterval(postTimes, 10000);
 
-function postTimes(){
 
-  //Cookies.set('times', timeData);
-  console.log(Cookies.get('times') );
-  //$.post("/api/study3/p1_times",timeData,function(data){
-    //alert(data);
-    //$('body').load(data);
-  //});
-}
-*/
 
-document.querySelector("form").addEventListener("submit",function(e){//submiting enables next button
-    //Cookies.remove('times');
-});
+
 
 //-----------------array shuffle function-------------------------------------------------------------
 

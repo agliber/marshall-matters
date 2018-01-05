@@ -1,5 +1,5 @@
 var form = document.querySelector("form");
-var radioButtons = form.querySelectorAll("input[type=radio][value=yes]");
+var radioButtons = form.querySelectorAll("input[type=radio][value='1']");
 
 
 form.addEventListener("click", function(e){

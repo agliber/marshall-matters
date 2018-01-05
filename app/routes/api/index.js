@@ -1,6 +1,16 @@
 var express = require("express");
 var router = express.Router();
+var emailExistence = require("email-existence");
 
+//on email blur check
+router.post("/email-exists",function(req,res,next){
+    console.log(req.body);
+    emailExistence.check(req.body.email, function(err,result){
+
+        res.send(result);
+    });
+
+});
 //first check if the page is the login page
 router.post("/login",function(req,res){
   console.log(`${req.method} request for ${req.url}`);
@@ -11,18 +21,13 @@ router.post("/login",function(req,res){
   //meaning the user has already begun the survey
   con.query(`SELECT user_id FROM decision_making WHERE user_id = '${req.body.email}' ;`, function(err,result,fields){
       if(err){throw err;}
-      console.log(JSON.stringify(result));
-      console.log(result.length);
+
 
       if(result.length == 0){//if user has not begun survey insert email as user_id
-        con.query(`INSERT INTO decision_making (user_id) VALUE ('${req.body.email}');`, function(err){
-          if(err) {throw err;}
-          req.surveySession.user_id = req.body.email;
-          res.redirect('/study1P1.html');
-        });
-      }else{//let user take the survey
-        res.sendStatus(400);
+        con.query(`INSERT INTO decision_making (user_id,mturk_id) VALUE ('${req.body.email}','${req.body.mturk_id}');`);
       }
+      req.surveySession.user_id = req.body.email;
+      res.redirect('/study1P1.html');
 
   });
 });
@@ -32,10 +37,7 @@ router.use("*",  require("./validateUserSession") );
 
 router.use("/study1",require("./study1"));
 router.use("/study2",require("./study2"));
-router.use("/study3",function(req,res,next){
-  console.log("test1");
-  next();
-},require("./study3"));
+router.use("/study3",require("./study3"));
 
 
 module.exports = router;

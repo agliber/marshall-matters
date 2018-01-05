@@ -4,6 +4,10 @@
     width: 100%;
     margin: 0 auto;
   }
+  input{
+    margin: 10px 0;
+    display:block;
+  }
 </style>
 <html>
   <head>
@@ -17,11 +21,14 @@
     </header>
     <main >
       <form action="/api/login" method="post" >
-        <input type="email" name="email" placeholder="Email" required></input>
+        <input type="email" name="email" placeholder="Email" required ></input>
+        <input type="text" name="mturk_id" placeholder="MTurk ID (optional)" ></input>
         <input type="submit" value="Begin" />
       </form>
     </main>
     <footer>
     </footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="./js/loginPage.js"></script>
   </body>
 </html>
