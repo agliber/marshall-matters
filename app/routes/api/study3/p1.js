@@ -16,9 +16,9 @@ router.post("/", function(req,res,next){
 
   var times = JSON.parse(req.cookies.times );//timeData object from study3P1.js
 
-  Object.values(times).forEach(function(time,index){
+  Object.keys(times).forEach(function(key,index){
 
-    con.query(`UPDATE decision_making SET study3P1_${index} = '${time}' WHERE user_id = '${user_id}' ;`,function(err){
+    con.query(`UPDATE decision_making SET study3P1_${index} = '${times[key]}' WHERE user_id = '${user_id}' ;`,function(err){
       if(err)throw{err};
     });
   });
