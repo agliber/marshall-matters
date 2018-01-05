@@ -2,7 +2,7 @@
   "name": "data_app",
   "version": "1.0.0",
   "description": "This is for a web app created by Adam Liber for Scott Wiltermuth of USC Marshall school of business 12-31-17",
-  "main": "dataApp.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

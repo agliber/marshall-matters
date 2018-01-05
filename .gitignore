@@ -2,3 +2,4 @@
 *.pdf
 *.pptx
 app/node_modules/*
+keys/*
