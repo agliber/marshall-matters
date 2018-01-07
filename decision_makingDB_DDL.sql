@@ -67,4 +67,4 @@ CREATE TABLE `decision_making` (
   `study3P3_userGender` char(6) DEFAULT NULL,
   PRIMARY KEY (`trial_number`),
   UNIQUE KEY `user_email_UNIQUE` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COMMENT='This table contains the data from the results of a survey created for Scott Wiltermuth of the USC Marshall school of Business, created by Adam Liber. Each row represents one survey trial.'
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='This table contains the data from the results of a survey created for Scott Wiltermuth of the USC Marshall school of Business, created by Adam Liber. Each row represents one survey trial.'

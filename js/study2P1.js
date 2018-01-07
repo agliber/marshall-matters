@@ -3,7 +3,7 @@ var answerOptions = [ "Not_At_All", "Rarely", "Some-times", "Often", "Very_Often
 
 questions.forEach(function(question,index){
 
-  for(var i = 0; i < 5; i++){
+  for(var i = 4; i >= 0; i--){
     var newCell = document.createElement("div");
     var newRadio = document.createElement("input");
     newCell.append(newRadio);
@@ -15,6 +15,7 @@ questions.forEach(function(question,index){
     //question.append(newCell);
     $(newCell).insertAfter(question);
   }
+
 });
 
 //-----------check all the radio buttons are checked before submitting----------
