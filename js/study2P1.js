@@ -11,8 +11,8 @@ questions.forEach(function(question,index){
     newRadio.setAttribute("type","radio");
     newRadio.setAttribute("name",`Q${index+1}`);
     newRadio.setAttribute("value",answerOptions[i]);
-    //newRadio.setAttribute("required","");//make all radio buttons required
-    //question.append(newCell);
+    newRadio.setAttribute("required","");//make all radio buttons required
+  
     $(newCell).insertAfter(question);
   }
 
