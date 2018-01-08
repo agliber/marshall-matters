@@ -16,6 +16,7 @@
   top: 0;
   padding: 5px;
   text-align: center;
+  color: #9d2235;;
 }
 .candidateTitle{
   position: sticky;
@@ -31,7 +32,7 @@
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  transition: box-shadow ease-in-out 0.5s;
+  transition: box-shadow ease-in-out 1.2s;
   /width: 200px;
 }
 .infoLabel:hover{

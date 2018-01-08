@@ -33,6 +33,7 @@ var timeData = {};
   }else{
     timeData = JSON.parse(Cookies.get('times') );
   }
+  Cookies.set('times',timeData);
   console.log(timeData);
   console.log(typeof timeData);
 }());
@@ -61,7 +62,7 @@ var table = document.querySelector("#infoTable");
 var interval, timeout, time = 0;
 
 table.addEventListener("mouseover", function(e){//delays the timer
-    timeout = setTimeout(function(){startTimer(e);},400);
+    timeout = setTimeout(function(){startTimer(e);},1200);
 });
 
  // stores the cummalitive hover times, for each characteristic
@@ -106,8 +107,6 @@ function timer(label){
     Cookies.set('times',timeData);
 
 }
-
-
 
 
 

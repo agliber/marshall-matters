@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Study 3</title>
+    <link rel="stylesheet" type="text/css" href="./css/studyAll.css">
+    <link rel="stylesheet" type="text/css" href="./css/study3P1.css">
+  </head>
+  <body>
+    <header>
+      <h1>Study 3</h1>
+        <p>
+          Please select which candidate you would choose to bring in for an interview.
+        </p>
+
+    </header>
+    <main>
+
+      <br>
+      <form method="post" action="/api/study3/p1choice">
+        <div id="radioButtonContainer">
+          <label for="radioCandidate1">Candidate 1</label>
+          <input type="radio" name="candidateChoice" id="radioCandidate1" value="1" required></input>
+          <input type="radio" name="candidateChoice" id="radioCandidate2" value="2" style="float:right;" required></input>
+          <label for="radioCandidate2" style="float:right;"> Candidate 2</label>
+
+        </div>
+        <input type="submit" value="Submit & Continue" ></input><br>
+      </form>
+
+
+    </main>
+    <footer>
+       <p>(5/7)</p>
+    </footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="./js/study3P1.js"></script>
+
+
+  </body>
+</html>

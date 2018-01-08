@@ -7,7 +7,7 @@ var express = require("express");
 
 var app = express();
 
-var server = app.listen(80,'104.236.240.117',function(err){
+var server = app.listen(3000,function(err){
   if(err){throw err;}
   console.log("server listening on port: 80" );
 });
@@ -19,7 +19,7 @@ app.use(sessions({
   cookieName : "surveySession",
   secret : "***REMOVED***",
   duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000
+  activeDuration: 10 * 60 * 1000
 }));
 
 app.use( express.static("../") );

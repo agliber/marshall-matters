@@ -1,3 +1,5 @@
+//study 2
+
 var express = require("express");
 var router = express.Router();
 
@@ -14,7 +16,7 @@ router.post("/", function(req,res,next){
             con.query(`UPDATE decision_making SET study2_${key} = '${body[key]}' WHERE user_id = '${user_id}' ;`);
         }
     }
-    res.redirect('/study3P1.html');
+    res.redirect('/study3P1times.html');
   }else{
     res.redirect('/');
   }

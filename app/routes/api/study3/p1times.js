@@ -13,7 +13,6 @@ router.post("/", function(req,res,next){
   console.log(req.cookies);
 
 
-
   var times = JSON.parse(req.cookies.times );//timeData object from study3P1.js
 
   Object.keys(times).forEach(function(key,index){
@@ -25,9 +24,8 @@ router.post("/", function(req,res,next){
 
   res.clearCookie('times');
 
-  con.query(`UPDATE decision_making SET candidate_choice = ${req.body.candidateChoice} WHERE user_id = '${user_id}';`);
-
-  res.redirect('/study3P2.html');
+//
+  res.redirect('/study3P1choice.html');
 } );
 
 
