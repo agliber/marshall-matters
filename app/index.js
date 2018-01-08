@@ -7,7 +7,7 @@ var express = require("express");
 
 var app = express();
 
-var server = app.listen(3000,function(err){
+var server = app.listen(80,'104.236.240.117',function(err){
   if(err){throw err;}
   console.log("server listening on port: 80" );
 });
