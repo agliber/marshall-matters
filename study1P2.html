@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Study 1</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/studyAll.css">
     <link rel="stylesheet" type="text/css" href="../css/study1.css">
   </head>
@@ -9,16 +10,21 @@
     <header>
       <h1> Study 1</h1>
       <p>
+        There are a wide variety of characteristics that describe any person. Some of these characteristics
+         predict job success in this particular job and some don’t.
+      </p>
+      <p>
         Please place a checkmark next to characteristics that you, as the hiring manager,
         think would predict success (or lack of success) in the job
         (including performance success and more generally doing well in the environment).
       </p>
+
       <p>
         Place an X next to characteristics that you think are irrelevant to success;
         i.e., characteristics that you do not think would be informative for predicting whether someone would succeed in the job.
       </p>
       <p>
-        If you aren’t sure about a particular characteristic, just leave the line next to it blank.
+        If you aren’t sure about a particular characteristic, just leave it blank.
       </P>
       <hr>
     </header>
@@ -27,27 +33,28 @@
 
       <form method="post" action="/api/study1" ><!--these need to be randomized via javascript-->
         <!--  X's inserted into newCheck instead of checkmarks with css and js -->
-         <label><div class = "newCheck"></div> College GPA <input type="checkbox" name="characteristic" value="gpa"></label>
-         <label><div class = "newCheck"></div> Extraversion <input type="checkbox" name="characteristic" value="extraversion"></label>
-         <label><div class = "newCheck"></div> Agreeableness  <input type="checkbox" name="characteristic" value="agreeableness"></label>
-         <label><div class = "newCheck"></div> Conscientiousness  <input type="checkbox" name="characteristic" value="conscientiousness"></label>
-         <label><div class = "newCheck"></div> Gender <input type="checkbox" name="characteristic" value="gender">  </label>
-         <label><div class = "newCheck"></div> Race  <input type="checkbox" name="characteristic" value="race"></label>
-         <label><div class = "newCheck"></div> Name of college attended <input type="checkbox" name="characteristic" value="college">  </label>
-         <label><div class = "newCheck"></div> Major<input type="checkbox" name="characteristic" value="major">  </label>
-         <label><div class = "newCheck"></div> Socioeconomic status background<input type="checkbox" name="characteristic" value="socioEconomicStatus">  </label>
-         <label><div class = "newCheck"></div> Prior experience in the field  <input type="checkbox" name="characteristic" value="experience"></label>
-         <label><div class = "newCheck"></div> Pet owner (yes/no)<input type="checkbox" name="characteristic" value="petOwner">   </label>
-         <label><div class = "newCheck"></div> hobbies <input type="checkbox" name="characteristic" value="hobbies">  </label>
-         <label><div class = "newCheck"></div> Marital status <input type="checkbox" name="characteristic" value="maritalStatus">  </label>
-         <label><div class = "newCheck"></div> Measure of achievement motivation<input type="checkbox" name="characteristic" value="motivation">  </label>
-         <label><div class = "newCheck"></div> Favorite color<input type="checkbox" name="characteristic" value="favoriteColor">   </label>
-         <label><div class = "newCheck"></div> Favorite movie<input type="checkbox" name="characteristic" value="favoriteMovie">   </label>
-         <label><div class = "newCheck"></div> Hometown<input type="checkbox" name="characteristic" value="homeTown">   </label>
-         <label><div class = "newCheck"></div> Programming languages <input type="checkbox" name="characteristic" value="programmingLanguage">  </label>
-         <label><div class = "newCheck"></div> Foreign languages <input type="checkbox" name="characteristic" value="foreignLanguage">   </label>
-         <label><div class = "newCheck"></div> Graduate degree <input type="checkbox" name="characteristic" value="graduateDegree">   </label>
-        <input type="submit" value="Submit & Continue" ></input>
+        <div id="inputTitle"> <p>&#10004 &nbsp;&nbsp;&nbsp; &#10006 </p> </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> College GPA <input type="radio" value="1" name="gpa"><input type="radio" value="2" name="gpa"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Extraversion <input type="radio" value="1" name="extraversion"><input type="radio" value="2" name="extraversion"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Agreeableness  <input type="radio" value="1" name="agreeableness"><input type="radio" value="2" name="agreeableness"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Conscientiousness  <input type="radio" value="1" name="conscientiousness"><input type="radio" value="2" name="conscientiousness"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Gender <input type="radio" value="1" name="gender"><input type="radio" value="2" name="gender">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Race  <input type="radio" value="1" name="race"><input type="radio" value="2" name="race"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Name of college attended <input type="radio" value="1" name="college"><input type="radio" value="2" name="college">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Major<input type="radio" value="1" name="major"><input type="radio" value="2" name="major">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Socioeconomic status background<input type="radio" value="1" name="socioEconomicStatus"><input type="radio" value="2" name="socioEconomicStatus">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Prior experience in the field  <input type="radio" value="1" name="experience"><input type="radio" value="2" name="experience"></div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Pet owner (yes/no)<input type="radio" value="1" name="petOwner"><input type="radio" value="2" name="petOwner">   </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Hobbies <input type="radio" value="1" name="hobbies"><input type="radio" value="2" name="hobbies">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Marital status <input type="radio" value="1" name="maritalStatus"><input type="radio" value="2" name="maritalStatus">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Measure of achievement motivation<input type="radio" value="1" name="motivation"><input type="radio" value="2" name="motivation">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Favorite color<input type="radio" value="1" name="favoriteColor"><input type="radio" value="2" name="favoriteColor">   </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Favorite movie<input type="radio" value="1" name="favoriteMovie"><input type="radio" value="2" name="favoriteMovie">   </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Hometown<input type="radio" value="1" name="hometown"><input type="radio" value="2" name="hometown">  </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Programming languages <input type="radio" value="1" name="programmingLanguage"><input type="radio" value="2" name="programmingLanguage">   </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Foreign languages <input type="radio" value="1" name="foreignLanguage"><input type="radio" value="2" name="foreignLanguage">   </div>
+         <div class="inputRow"><div class = "newCheck"></div><div class = "newX"></div> Graduate degree <input type="radio" value="1" name="graduateDegree"><input type="radio" value="2" name="graduateDegree">   </div>
+         <input type="submit" value="Submit & Continue" ></input>
       </form>
 
     </main>

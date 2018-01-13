@@ -1,5 +1,5 @@
 
-label {
+.inputRow {
   font-family: helvetica;
   display: flex;
   vertical-align: center;
@@ -9,7 +9,7 @@ label {
   transition: box-shadow ease-in-out 0.1s;
 }
 
-input[type=checkbox]{
+input[type=radio]{
   /display: inline-block;
   opacity: 0;
   padding: 0;
@@ -17,13 +17,14 @@ input[type=checkbox]{
 
 }
 
-.newCheck{
+.newCheck, .newX{
+  /box-sizing: border-box;
   overflow: hidden;
   font-size: 15px;
-  line-height: 100%;
-  padding: 0;
+  line-height: 110%;
+  /padding: 2px 0 0 0;
   border-radius: 4px;
-  margin: 0px 15px;
+  margin: 0px 15px 0 0;
   vertical-align: center;
   text-align: center;
   flex-shrink: 0;
@@ -32,7 +33,6 @@ input[type=checkbox]{
   border: black solid 1px;
   /background-color: white;
 }
-label:hover{
+.newCheck:hover, .newX:hover{
   box-shadow: 0 0 10px;
-  /background-color: #ffc72c;
 }
