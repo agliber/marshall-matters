@@ -24,7 +24,7 @@ router.post("/", function(req,res,next){
 
 
     con.query(`UPDATE decision_making SET study_progress = 1 WHERE user_id = '${user_id}' ;`);
-    res.status(307).redirect('/study2P1.html');
+    res.redirect('/study2P1.html');
     next();
 });
 

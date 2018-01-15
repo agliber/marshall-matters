@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <style>
+
   form{
     width: 100%;
     margin: 0 auto;
   }
   input{
     margin: 10px 0;
-    display:block;
+    display:inline-block;
   }
 </style>
 <html>
@@ -22,7 +23,9 @@
     <main >
       <form action="/api/login" method="post" >
         <input type="email" name="email" placeholder="Email" required ></input>
-        <input type="text" name="mturk_id" placeholder="MTurk ID (optional)" ></input>
+        <img src="./media/spin.gif" alt="loading" style="position:relative; visibility:hidden;width:24px;height:24px; transform:translate(0px,8px);">
+        <br /><input type="text" name="mturk_id" placeholder="MTurk ID (optional)" ></input>
+
         <input type="submit" value="Begin" />
       </form>
     </main>
