@@ -26,6 +26,7 @@
     "email-existence": "^0.1.5",
     "email-validator": "^1.1.1",
     "express": "^4.16.2",
+    "helmet": "^3.9.0",
     "js-cookie": "^2.2.0",
     "mysql": "^2.15.0"
   }

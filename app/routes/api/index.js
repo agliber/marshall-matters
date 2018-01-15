@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var emailExistence = require("email-existence");
 
+
+
 //on email blur check
 router.post("/email-exists",function(req,res,next){
     console.log(req.body);
@@ -33,7 +35,7 @@ router.post("/login",function(req,res){
 });
 
 // for any other page beside for login page, check to see if session is running and user_id is available
-router.use("*",  require("./validateUserSession") );
+//router.use("*",  require("./validateUserSession") );
 
 router.use("/study1",require("./study1"));
 router.use("/study2",require("./study2"));

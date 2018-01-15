@@ -1,9 +1,9 @@
 html{
-  background-color: #9d2235; //usc cardinal
+  background-color: #9d2235;
 }
 body{
   border-radius: 40px;
-  border: solid #ffc72c 4px; // usc gold
+  border: solid #ffc72c 4px;
   width: 900px;
   margin: 10px auto;
   background-color: white;
@@ -41,7 +41,7 @@ button.navigation[type="next"]{
   cursor: pointer;
 }
 
-p, h1, td, div{
+p, h1, h3, td, div{
   font-family: helvetica;
 }
 
