@@ -39,7 +39,7 @@ router.all("/", function(req,res,next){
             }else if( studyProgress == 2){
                 res.redirect('/study3P1times.html');
             }else if(studyProgress == 3){
-                res.redirect('/ThankYouPage.html');
+                res.redirect('/thankYouPage.html');
             }
         }
       });
