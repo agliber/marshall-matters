@@ -1,5 +1,5 @@
 var questions = document.querySelectorAll(".question");
-var answerOptions = [ "Not_At_All", "Rarely", "Some-times", "Often", "Very_Often"];
+var answerOptions = [ "Not_At_All", "Rarely", "Sometimes", "Often", "Very_Often"];
 
 questions.forEach(function(question,index){
 
@@ -12,7 +12,7 @@ questions.forEach(function(question,index){
     newRadio.setAttribute("name",`Q${index+1}`);
     newRadio.setAttribute("value",answerOptions[i]);
     newRadio.setAttribute("required","");//make all radio buttons required
-  
+
     $(newCell).insertAfter(question);
   }
 

@@ -12,7 +12,7 @@
   margin-right: 10px;
   display: inline-block;
   text-justify: center;
-  width: 80px;
+  width: 90px;
 }
 input[type=radio]{
   /display: inline-block;
@@ -29,7 +29,7 @@ input[type=radio]{
   line-height: 110%;
   /padding: 2px 0 0 0;
   border-radius: 4px;
-  margin: 0px 35px 0 35px;
+  margin: 0px 40px;
   vertical-align: center;
   text-align: center;
   flex-shrink: 0;

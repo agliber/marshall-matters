@@ -34,8 +34,6 @@ var timeData = {};
     timeData = JSON.parse(Cookies.get('times') );
   }
   Cookies.set('times',timeData);
-  console.log(timeData);
-  console.log(typeof timeData);
 }());
 //------------------------------Randomize form info-----------------------------------------------
 
@@ -72,7 +70,6 @@ function startTimer(e){//displays the information for each candidate upon hoveri
     }
 
     if(e.target.className == "infoLabel"){
-      console.log(e.target.innerHTML);
       var label = e.target.innerHTML.trim();
       var infoNum = e.target.getAttribute("data-info-num");
       interval = setInterval(function(){timer(label);}, 100);
@@ -103,7 +100,6 @@ function timer(label){
 
     timeData[label] += 0.1 ;
     timeData[label] = round(timeData[label],2);
-    console.log(timeData[label]);
     Cookies.set('times',timeData);
 
 }
