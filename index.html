@@ -25,9 +25,10 @@
     </header>
     <main >
       <form action="/api/login" method="post" >
-        <input type="email" name="email" placeholder="Email" required ></input>
+        <input type="email" name="email" placeholder="Email" autocomplete="off" required ></input>
         <img src="./media/Spin.gif" alt="loading" style="position:relative; visibility:hidden;width:24px;height:24px; transform:translate(0px,8px);">
-        <br /><input type="text" name="mturk_id" placeholder="MTurk ID (optional)" ></input>
+        <p style="margin: 0px;">or</p>
+        <input type="text" name="mturk_id" placeholder="MTurk ID" autocomplete="off" required ></input>
 
         <input type="submit" value="Begin" />
       </form>

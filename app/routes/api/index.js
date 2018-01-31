@@ -4,7 +4,7 @@ var emailExistence = require("email-existence");
 
 
 
-//on email blur check
+//on input email check if email exists
 router.post("/email-exists",function(req,res,next){
     console.log(req.body);
     emailExistence.check(req.body.email, function(err,result){
@@ -21,14 +21,14 @@ router.post("/login",function(req,res){
   var con = req.app.get('connection');
   //check if the user email already exists in the data base
   //meaning the user has already begun the survey
-  con.query(`SELECT user_id FROM decision_making WHERE user_id = '${req.body.email}' ;`, function(err,result,fields){
+  var user_id = req.body.email + req.body.mturk_id;
+  con.query(`SELECT user_id FROM decision_making WHERE user_id = '${user_id}' ;`, function(err,result,fields){
       if(err){throw err;}
 
-
       if(result.length == 0){//if user has not begun survey insert email as user_id
-        con.query(`INSERT INTO decision_making (user_id,mturk_id) VALUE ('${req.body.email}','${req.body.mturk_id}');`);
+        con.query(`INSERT INTO decision_making (user_id) VALUE ('${user_id}');`);
       }
-      req.surveySession.user_id = req.body.email;
+      req.surveySession.user_id = user_id;
       res.redirect('/study1P1.html');
 
   });
