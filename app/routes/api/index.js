@@ -21,7 +21,8 @@ router.post("/login",function(req,res){
   var con = req.app.get('connection');
   //check if the user email already exists in the data base
   //meaning the user has already begun the survey
-  var user_id = req.body.email + req.body.mturk_id;
+  var user_id = req.body.email || req.body.mturk_id;
+  console.log(user_id);
   con.query(`SELECT user_id FROM decision_making WHERE user_id = '${user_id}' ;`, function(err,result,fields){
       if(err){throw err;}
 
