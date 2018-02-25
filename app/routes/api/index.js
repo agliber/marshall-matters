@@ -47,7 +47,7 @@ router.post("/login",function(req,res){
 router.use("/study1",require("./study1"));
 router.use("/study2",require("./study2"));
 router.use("/study3",require("./study3"));
-router.use("/thankYou",require("./thankyou"));
+router.use("/thankYou",require("./thankYou"));
 
 
 module.exports = router;
