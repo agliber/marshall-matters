@@ -24,6 +24,24 @@ router.post("/", function(req,res,next){
 
 
     con.query(`UPDATE decision_making SET study_progress = 1 WHERE user_id = '${user_id}' ;`);
+    //create random mturk verification code
+    // 6 char string of capital letters and numbers
+    function codeGen(length){
+      var code = "";
+      for(var i = 0; i < length; i++){
+        var r = Math.floor(Math.random() * 35);
+        var c = (r).toString(36).toUpperCase();
+        code += c;
+      }
+      return code;
+    }
+    for(var i = 0; i< 10; i++){
+        console.log(codeGen(6) );
+    }
+
+
+
+
     res.redirect('/study2P1.html');
     next();
 });

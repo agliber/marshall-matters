@@ -1,6 +1,7 @@
 CREATE TABLE `decision_making` (
   `trial_number` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `user_id` varchar(45) NOT NULL,
+  `mTurk_code` varchar(45) DEFAULT NULL,
   `study_progress` tinyint(4) DEFAULT '0',
   `study1_gpa` tinyint(4) DEFAULT NULL,
   `study1_extraversion` tinyint(4) DEFAULT NULL,
@@ -69,5 +70,6 @@ CREATE TABLE `decision_making` (
   `study3P3_userGender` char(6) DEFAULT NULL,
   PRIMARY KEY (`trial_number`),
   UNIQUE KEY `trial_number_UNIQUE` (`trial_number`),
-  UNIQUE KEY `user_email_UNIQUE` (`user_id`)
+  UNIQUE KEY `user_email_UNIQUE` (`user_id`),
+  UNIQUE KEY `mTurk_code_UNIQUE` (`mTurk_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='This table contains the data from the results of a survey created for Scott Wiltermuth of the USC Marshall school of Business, created by Adam Liber. Each row represents one survey trial.'
