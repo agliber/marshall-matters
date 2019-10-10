@@ -49,9 +49,7 @@ router.use("/study2",require("./study2"));
 router.use("/study3",require("./study3"));
 router.use("/thankYou",require("./thankYou"));
 
-
 module.exports = router;
-
 
 //------------Code Generator ----------------------
 function codeGen(length){

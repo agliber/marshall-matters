@@ -1,5 +1,16 @@
-#specific files to ignore
+# .gitignore
+
+# packages
+app/node_modules/*
+
+# Sensitive Data
+keys/*
+*.env
+
+# Not Source
 *.pdf
 *.pptx
-app/node_modules/*
-keys/*
+*.csv
+*.xlsx
+*.xml
+*.jar

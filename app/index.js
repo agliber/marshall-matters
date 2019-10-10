@@ -4,20 +4,23 @@ var sessions = require("client-sessions");
 var bodyParser = require("body-parser");
 var express = require("express");
 var helmet = require("helmet");
+require('dotenv').config();
 
 var app = express();
-//80,'104.236.240.117'
-var server = app.listen(80,'104.236.240.117',function(err){
+
+var port = process.env.PORT;
+var server = app.listen(port,function(err){
   if(err){throw err;}
-  console.log("server listening on port: 80" );
+  console.log(`server listening on port: ${port}`);
 });
 
 app.use(bodyParser.json() );
 app.use(bodyParser.urlencoded({extended:false}));
 
+console.log(process.env.SESSION_SECRET);
 app.use(sessions({
   cookieName : "surveySession",
-  secret : "***REMOVED***",
+  secret : process.env.SESSION_SECRET,
   duration: 30 * 60 * 1000,
   activeDuration: 10 * 60 * 1000
 }));
@@ -28,9 +31,9 @@ app.use( express.static("../") );
 
 
 var con = mysql.createConnection({
-  host : "localhost",
-  user : "root",
-  password : "***REMOVED***",
+  host : process.env.DB_HOST,
+  user : process.env.DB_USER,
+  password : process.env.DB_PASS,
   database : "interview_factors"
 });
 
