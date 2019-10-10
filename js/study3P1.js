@@ -60,7 +60,7 @@ var table = document.querySelector("#infoTable");
 var interval, timeout, time = 0;
 
 table.addEventListener("mouseover", function(e){//delays the timer
-    timeout = setTimeout(function(){startTimer(e);},1200);
+    timeout = setTimeout(function(){startTimer(e);},400);
 });
 
  // stores the cummalitive hover times, for each characteristic
